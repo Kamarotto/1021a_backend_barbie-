@@ -1,6 +1,6 @@
 import { describe, test, expect } from "vitest";
 import SalvaFilme from "./salva-filme.use-case";
-import BancoEmMemoria from '../src/infra/banco/banco-em-memoria'
+import BancoEmMemoria from '../infra/banco/banco-em-memoria'
 
 
 describe("testando usecase de salvar filme",()=>{
