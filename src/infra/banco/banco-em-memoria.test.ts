@@ -2,7 +2,7 @@ import {describe,test,expect} from 'vitest'
 import BancoEmMemoria from './banco-em-memoria'
 
 describe('Banco em memória', () =>{
-  test('Deve salvar no banco em memoria', () => {
+  test('Deve salvar no banco em memoria',async () => {
     const input = {
         id:1,
         titulo:'test',
@@ -10,7 +10,7 @@ describe('Banco em memória', () =>{
         foto:'test',
     }
     const bancoEmMemoria = new BancoEmMemoria()
-    const result = bancoEmMemoria.salvar(input)
+    const result = await bancoEmMemoria.salvar(input)
     expect(result).toBe(true)
     expect(bancoEmMemoria.dados).toHaveLength(1)
     expect(bancoEmMemoria.dados).toEqual([input])
