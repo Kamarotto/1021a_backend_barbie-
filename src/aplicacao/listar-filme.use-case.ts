@@ -1,10 +1,9 @@
 import FilmeRepositorioInterface from "./filme-repositorio-interface"
 
-export default  class Listarilme{
-    constructor(private bancoInterface:FilmeRepositorioInterface){}
+export default class ListarFilme{
+    constructor(private filmeRepositorio:FilmeRepositorioInterface){}
     public async execute():Promise<Filme[]>{
-        const resultado = await this.bancoInterface.listar()
-        return resultado
+        return this.filmeRepositorio.listar()
     }
 }
 type Filme = {
