@@ -2,10 +2,13 @@ import express, {Request} from 'express';
 import BancoMongoDB from './infra/banco/banco-mongodb';
 import ListarFilme from './aplicacao/listar-filme.use-case';
 import SalvarFilme from './aplicacao/salva-filme.use-case';
+import cors from 'cors';
 
 const bancoMongoDB = new BancoMongoDB();
+
 const app = express();
 app.use(express.json())
+app.use(cors())
 
 app.get('/filmes', async (req, res) => {
     const listarFilme = new ListarFilme(bancoMongoDB)
